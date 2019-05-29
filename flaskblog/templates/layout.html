@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -9,13 +10,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" . type="text/css" href="{{ url_for('static', filename='main.css') }}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {% if title %}
-        <title>Student Blog - {{ title }}</title>
+    <title>Student Blog - {{ title }}</title>
     {% else %}
-        <title>Student Blog</title>
+    <title>Student Blog</title>
     {% endif %}
 </head>
 
@@ -36,12 +39,12 @@
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
                         {% if current_user.is_authenticated %}
-                            <a class="nav-item nav-link" href="{{ url_for('new_post') }}">New Post</a>
-                            <a class="nav-item nav-link" href="{{ url_for('account') }}">account</a>
-                            <a class="nav-item nav-link" href="{{ url_for('logout') }}">logout</a>
+                        <a class="nav-item nav-link" href="{{ url_for('new_post') }}">New Post</a>
+                        <a class="nav-item nav-link" href="{{ url_for('account') }}">account</a>
+                        <a class="nav-item nav-link" href="{{ url_for('logout') }}">logout</a>
                         {% else %}
-                            <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
-                            <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+                        <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+                        <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
                         {% endif %}
                     </div>
                 </div>
@@ -55,9 +58,9 @@
                 {% with messages = get_flashed_messages(with_categories= True) %}
                 {% if messages %}
                 {% for category, message in messages %}
-                    <div class="alert alert-{{category}}">
-                        {{ message }}
-                    </div>
+                <div class="alert alert-{{category}}">
+                    {{ message }}
+                </div>
                 {% endfor %}
                 {% endif %}
                 {% endwith %}
@@ -90,6 +93,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
         integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous">
         </script>
+
+    <footer class="footer">
+        <ul>
+            <li>Product</li>
+            <li>Service</li>
+            <li>Contact Us</li>
+        </ul>
+        <p>Copyright 2019, Suhail Malik <a href="https://github.com/suhailmalik07"><i class="fab fa-github"
+                    style="font-size: 20px; margin-left: 10px; color: black;"></i></a></p>
+    </footer>
 
 </body>
 
